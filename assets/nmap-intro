@@ -1,0 +1,24 @@
+nmap 192.168.1.50-53
+-Pn (No ping) This option skips the host discovery stage altogether. Normally, Nmap uses this stage to determine active machines for heavier scanning and to gauge the speed of the network.
+top 1000 ports
+nmap 192.168.1.50-53 -Pn 
+
+save output top 1000 ports
+nmap 192.168.1.50-53 -Pn -oA savehere
+
+
+Scans all65535 ports
+nmap 192.168.1.50-53 -Pn -p- -oA savehere or -p 1-65535 
+
+Enables OS detection, as discussed above. Alternatively, you can use -A to enable OS detection along with other things.
+nmap 192.168.1.50-53 -Pn -O
+sudo nmap 192.168.1.50-53 -Pn -O
+
+ Attempts to determine the version of the service running on port
+nmap -sV -p 1-65535 192.168.1.50-53 -oA 
+
+Scan with default NSE scripts. Considered useful for discovery and safe
+nmap -sC 192.168.1.50-53 -vv
+
+Cheat Sheet
+https://www.stationx.net/nmap-cheat-sheet/
