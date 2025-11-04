@@ -1,0 +1,72 @@
+Nmap Commands
+No. Command Explanation
+1 nmap -sP 192.168.1.0/24 Scan the network to discover active
+devices.
+2 nmap -sS 192.168.1.1 Perform a TCP SYN scan to detect open
+ports on the device.
+3 nmap -sV 192.168.1.1 Detect the versions of services running on
+open ports.
+4 nmap -O 192.168.1.1 Determine the operating system used on
+the device.
+5 nmap -A 192.168.1.1 Comprehensive scan including open ports,
+service versions, and OS detection.
+6 nmap -Pn 192.168.1.1 Scan devices even if they do not respond
+to Ping requests.
+7 nmap -sU 192.168.1.1 Scan for open UDP ports.
+8 nmap -p- 192.168.1.1 Scan all ports (1-65535) instead of just
+default ports.
+9 nmap --script vuln 192.168.1.1 Use scripts to check for vulnerabilities.
+10 nmap --script smb-enum-shares -p 445
+192.168.1.1
+Enumerate SMB shares using Nmap script.
+11 nmap --script http-enum -p 80 192.168.1.1 Enumerate web server directories using
+Nmap script.
+12 nmap --script smb-vuln-ms17-010 192.168.1.1 Check for MS17-010 (EternalBlue)
+vulnerability.
+13 nmap --script smb-vuln-cve-2017-7494
+192.168.1.1
+Check for CVE-2017-7494 (SambaCry)
+vulnerability.
+14 nmap --script smb-vuln-ms08-067 192.168.1.1 Check for MS08-067 vulnerability.
+15 nmap --script smb-vuln-ms10-061 192.168.1.1 Check for MS10-061 (Print Spooler)
+vulnerability.
+16 nmap --script smb-vuln-regsvc-dos
+192.168.1.1
+Check for registry service DoS
+vulnerability.
+17 nmap --script http-sql-injection --scriptargs='
+http-sql-injection.args' -p 80 192.168.1.1
+Check for SQL injection vulnerabilities
+using Nmap script.
+18 nmap -sL 192.168.1.0/24 List all IPs in the subnet without scanning
+them.
+19 nmap -p80 --script http-methods 192.168.1.1 Discover allowed HTTP methods on a web
+server.
+20 nmap -p80 --script http-title 192.168.1.1 Retrieve the title of the webpage.
+21 nmap -p80 --script http-headers 192.168.1.1 Retrieve HTTP headers from the server.
+22 nmap -p80 --script http-enum 192.168.1.1 Enumerate common web applications on
+the server.
+23 nmap -p80 --script http-auth 192.168.1.1 Test for HTTP authentication methods.
+24 nmap -sX 192.168.1.1 Xmas scan to detect open ports.
+25 nmap -sA 192.168.1.1 ACK scan to map firewall rulesets.
+26 nmap -sW 192.168.1.1 Window scan to detect open ports based
+on TCP window size.
+27 nmap -sM 192.168.1.1 Maimon scan to detect open ports using
+FIN/ACK flag combination.
+28 nmap -p80 --script http-userdir-enum
+192.168.1.1
+Enumerate user directories on a web
+server.
+29 nmap -p80 --script http-passwd 192.168.1.1 Check for /etc/passwd file on web server.
+30 nmap -p80 --script http-robots.txt 192.168.1.1 Retrieve and analyze the robots.txt file.
+31 nmap --script ssh-brute -p 22 192.168.1.1 Brute-force SSH login using Nmap script.
+32 nmap --script ftp-anon 192.168.1.1 Check for anonymous FTP login.
+33 nmap --script ftp-vsftpd-backdoor 192.168.1.1 Check for vsftpd backdoor vulnerability.
+34 nmap --script http-sql-injection --scriptargs=' http-sql-injection.args' -p 80 192.168.1.1
+Check for SQL injection vulnerabilities using Nmap script.
+35 nmap --script http-phpself-xss 192.168.1.1 Check for PHP_SELF XSS vulnerabilities.
+36 nmap --script dns-brute 192.168.1.1 Perform DNS brute-force enumeration.
+37 nmap -p 22 --script ssh-hostkey 192.168.1.1 Retrieve SSH host keys.
+38 nmap -p 53 --script dns-recursion 192.168.1.1 Check for DNS recursion.
+39 nmap --traceroute 192.168.1.1 Perform a traceroute along with the scan.
+40 nmap -sn 192.168.1.0/24 Ping scan to discover live hosts without port scanning.
